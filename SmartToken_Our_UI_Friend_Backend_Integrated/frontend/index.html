@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartToken — Arrive Just in Time</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <header class="nav">
+    <a class="brand" href="#"><span class="brand-mark">✦</span><span>Smart<span>Token</span></span></a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#access">Access</a>
+      <button class="btn btn-ghost" onclick="openModal('adminLoginModal')">Hospital Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> LIVE OPD QUEUE • SMART ETA</div>
+        <h1>Don’t wait in the hospital.<br><em>Arrive just in time.</em></h1>
+        <p class="hero-text">Get a digital token, a realistic waiting estimate and live updates whenever the OPD queue changes.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-large" onclick="openModal('patientModal')">Get Your Smart Token <span>→</span></button>
+          <button class="btn btn-outline btn-large" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See how it works</button>
+        </div>
+        <div class="trust-row">
+          <span>✓ Live queue</span><span>✓ SMS-ready</span><span>✓ Emergency-aware</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card notification">
+          <span class="icon-round green">✓</span>
+          <div><strong>Queue updated</strong><small>Token #42 · ETA 2:25 PM</small></div>
+        </div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="mini-brand">SmartToken</div>
+            <p class="small-muted">YOUR SMART TOKEN</p>
+            <div class="token-number">42</div>
+            <div class="queue-pill">● 7 patients ahead</div>
+            <div class="eta-grid">
+              <div><small>EST. WAIT</small><b>38 min</b></div>
+              <div><small>ARRIVE BY</small><b>2:15 PM</b></div>
+            </div>
+            <div class="live-box"><span class="live-dot"></span><b>Live forecast</b><br><small>We’ll update you if the queue changes.</small></div>
+          </div>
+        </div>
+        <div class="floating-card emergency">
+          <span class="icon-round amber">!</span>
+          <div><strong>Emergency inserted</strong><small>Your ETA changed by +20 min</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="access-section">
+      <div class="section-heading centered">
+        <div class="eyebrow">TWO SIMPLE DOORS</div>
+        <h2>One system. Two experiences.</h2>
+        <p>Patients get clarity. Hospital teams get control.</p>
+      </div>
+      <div class="access-grid">
+        <article class="access-card patient-card">
+          <div class="card-icon">♥</div>
+          <span class="card-label">FOR PATIENTS</span>
+          <h3>Get a Smart Token</h3>
+          <p>Register, choose your specialty and hospital, then receive your token with live waiting and arrival estimates.</p>
+          <button class="btn btn-primary" onclick="openModal('patientModal')">Patient Registration / Login →</button>
+          <div class="feature-list"><span>✓ Digital token</span><span>✓ Live ETA</span><span>✓ SMS + Email updates</span></div>
+        </article>
+        <article class="access-card admin-card">
+          <div class="card-icon">⌘</div>
+          <span class="card-label">FOR HOSPITALS</span>
+          <h3>Manage Live OPD</h3>
+          <p>See department queues and handle cancellations, emergencies and doctor availability changes in real time.</p>
+          <button class="btn btn-dark" onclick="openModal('adminLoginModal')">Administration Login →</button>
+          <div class="feature-list"><span>✓ Live queue</span><span>✓ Re-forecast</span><span>✓ Patient notifications</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="how-section">
+      <div class="section-heading">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2>From token to turn time —<br>without the guesswork.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><h3>Register</h3><p>Enter your basic contact details and location.</p></div>
+        <div class="step"><b>02</b><h3>Choose</h3><p>Select a specialty and find a suitable nearby hospital.</p></div>
+        <div class="step"><b>03</b><h3>Get Token</h3><p>Receive your token, queue position and initial ETA.</p></div>
+        <div class="step"><b>04</b><h3>Stay Updated</h3><p>Queue changes trigger a fresh ETA and notification.</p></div>
+      </div>
+    </section>
+
+    <section class="twist-section">
+      <div class="twist-copy">
+        <div class="eyebrow">THE KEY INNOVATION</div>
+        <h2>The queue changes.<br><em>Your ETA changes too.</em></h2>
+        <p>Emergency patients, cancellations and doctor availability can disrupt a planned queue. SmartToken re-forecasts the affected patients instead of leaving them with an old estimate.</p>
+        <div class="reforecast-flow"><span>Queue event</span><i>→</i><span>Recalculate</span><i>→</i><span>Notify</span></div>
+      </div>
+      <div class="forecast-card">
+        <div class="forecast-top"><span>LIVE RE-FORECAST</span><span class="live-tag">● LIVE</span></div>
+        <div class="forecast-row"><span>Token #42</span><b>2:00 PM</b><small>Original ETA</small></div>
+        <div class="event-line"><span>⚡ Emergency inserted</span><b>+20 min</b></div>
+        <div class="forecast-row updated"><span>Token #42</span><b>2:20 PM</b><small>Updated ETA</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">✦</span> SmartToken</div><p>Smart OPD token & live wait-time prediction prototype.</p></footer>
+
+  <!-- PATIENT MODAL -->
+  <div class="modal-backdrop" id="patientModal">
+    <div class="modal large">
+      <button class="close" onclick="closeModal('patientModal')">×</button>
+      <div class="modal-progress"><span class="active"></span><span></span><span></span><span></span></div>
+      <div id="patientStep1" class="modal-step active">
+        <div class="modal-eyebrow">PATIENT ACCESS · 01/04</div>
+        <h2>Let’s get you registered.</h2><p>We’ll use these details to send your token and live queue updates.</p>
+        <form id="patientForm" onsubmit="submitPatient(event)">
+          <label>Full name<input id="pName" required placeholder="e.g. Ananya Sharma"></label>
+          <label>Your location<input id="pLocation" required placeholder="Locality, city, PIN code"></label>
+          <label>Phone number<input id="pPhone" required type="tel" pattern="[0-9]{10}" placeholder="10-digit mobile number"></label>
+          <label>Email address<input id="pEmail" required type="email" placeholder="you@example.com"></label>
+          <button class="btn btn-primary full" type="submit">Continue to Specialties →</button>
+        </form>
+      </div>
+
+      <div id="patientStep2" class="modal-step">
+        <div class="modal-eyebrow">CHOOSE SPECIALTY · 02/04</div>
+        <h2>What kind of doctor do you need?</h2><p>Select the OPD specialty for your appointment.</p>
+        <div id="specialtyGrid" class="specialty-grid"></div>
+      </div>
+
+      <div id="patientStep3" class="modal-step">
+        <div class="modal-eyebrow">FIND HOSPITAL · 03/04</div>
+        <h2>Find the right hospital.</h2><p>Use your preferred area or search by hospital name. Location is used only to improve nearby results.</p>
+        <div class="location-tools">
+          <div class="search-wrap"><span>⌕</span><input id="hospitalSearch" oninput="renderHospitals()" placeholder="Search hospital, locality, city or PIN"></div>
+          <button class="location-btn" onclick="useCurrentLocation()">⌖ Use my location</button>
+        </div>
+        <div id="locationStatus" class="location-status"></div>
+        <div id="hospitalList" class="hospital-list"></div>
+      </div>
+
+      <div id="patientStep4" class="modal-step">
+        <div class="modal-eyebrow">CONFIRM APPOINTMENT · 04/04</div>
+        <h2>Confirm your smart appointment.</h2>
+        <div id="bookingSummary" class="booking-summary"></div>
+        <form onsubmit="confirmBooking(event)">
+          <div class="two-col">
+            <label>Appointment date<input id="apptDate" type="date" required></label>
+            <label>Preferred time<input id="apptTime" type="time" required value="14:00"></label>
+          </div>
+          <div class="consent"><input type="checkbox" required> <span>I confirm my contact details are correct and want to receive appointment updates.</span></div>
+          <button class="btn btn-primary full" type="submit">Generate Smart Token ✦</button>
+        </form>
+      </div>
+
+      <div id="patientSuccess" class="modal-step success-screen">
+        <div class="success-icon">✓</div>
+        <div class="modal-eyebrow">TOKEN CONFIRMED</div>
+        <h2>You’re booked. 🎉</h2>
+        <p>Your live queue card is ready.</p>
+        <div id="tokenResult" class="token-result"></div>
+        <button class="btn btn-dark full" onclick="closeModal('patientModal')">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN -->
+  <div class="modal-backdrop" id="adminLoginModal">
+    <div class="modal">
+      <button class="close" onclick="closeModal('adminLoginModal')">×</button>
+      <div class="modal-eyebrow">HOSPITAL ADMINISTRATION</div>
+      <h2>Sign in to your OPD dashboard.</h2>
+      <p>Enter the hospital code to load the correct hospital and its departments.</p>
+      <form onsubmit="adminLogin(event)">
+        <label>Hospital code<input id="hospitalCode" required value="SMT-MUM-001" placeholder="e.g. GOV-MH-001"></label>
+        <label>Administrator ID<input required value="admin@hospital.gov.in" type="email"></label>
+        <label>Password<input required type="password" value="admin123"></label>
+        <button class="btn btn-dark full" type="submit">Open Live Dashboard →</button>
+      </form>
+      <div class="demo-note">Demo code: <b>SMT-MUM-001</b></div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

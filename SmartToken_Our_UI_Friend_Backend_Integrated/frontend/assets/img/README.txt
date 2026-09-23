@@ -1,0 +1,1 @@
+No external image assets are required; the UI uses CSS icons and responsive cards. Hospital photos can be added here later.
